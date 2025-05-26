@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hrací web pro dospělé</title>
+  <style>
+    /* Barevná paleta Pornhub */
+    :root {
+      --black: #111;
+      --dark-gray: #222;
+      --orange: #ff6600;
+      --white: #fff;
+      --gray: #888;
+    }
+    /* Reset a základ */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Header a logo */
+    header {
+      background: var(--dark-gray);
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.8);
+    }
+    header .logo {
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: var(--white);
+      user-select: none;
+      letter-spacing: 3px;
+      font-family: 'Arial Black', Arial, sans-serif;
+    }
+    header .logo span {
+      background: var(--orange);
+      color: var(--black);
+      padding: 6px 12px;
+      margin-left: 8px;
+      border-radius: 3px;
+      font-weight: 900;
+      font-size: 2.2rem;
+      font-family: 'Arial Black', Arial, sans-serif;
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+
+    /* Navigace */
+    nav {
+      background: var(--dark-gray);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 14px 0;
+      box-shadow: inset 0 -2px 0 var(--orange);
+    }
+    nav a {
+      color: var(--gray);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.05rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+      user-select: none;
+    }
+    nav a:hover,
+    nav a.active {
+      background: var(--orange);
+      color: var(--black);
+      box-shadow: 0 0 12px var(--orange);
+    }
+
+    /* Hlavní obsah */
+    main {
+      max-width: 1150px;
+      margin: 35px auto;
+      padding: 0 20px 50px 20px;
+    }
+
+    /* Grid videí */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+      gap: 22px;
+    }
+    .video-card {
+      background: var(--dark-gray);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(255,102,0,0.4);
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      color: var(--white);
+    }
+    .video-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(255,102,0,0.7);
+    }
+    .video-thumb {
+      width: 100%;
+      display: block;
+      border-bottom: 4px solid var(--orange);
+      transition: filter 0.3s ease;
+    }
+    .video-card:hover .video-thumb {
+      filter: brightness(1.1);
+    }
+    .video-title {
+      padding: 14px 16px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      user-select: none;
+    }
+
+    /* Video přehrávač */
+    .video-player {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .video-player h2 {
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: var(--orange);
+      text-shadow: 0 0 12px var(--orange);
+      margin-bottom: 18px;
+      user-select: none;
+    }
+    iframe {
+      width: 100%;
+      max-width: 900px;
+      height: 540px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 40px var(--orange);
+    }
+
+    /* Patička */
+    footer {
+      background: var(--dark-gray);
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      color: var(--gray);
+      user-select: none;
+      box-shadow: inset 0 2px 0 var(--orange);
+    }
+
+    /* Responsive menší obrazovky */
+    @media (max-width: 480px) {
+      nav {
+        gap: 12px;
+        padding: 10px 0;
+      }
+      nav a {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+      }
+      .video-player iframe {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">HRACÍ <span>WEB</span></div>
+  </header>
+  <nav>
+    <a href="#" class="active">Domů</a>
+    <a href="#">Kategorie</a>
+    <a href="#">Nejlepší videa</a>
+    <a href="#">O nás</a>
+    <a href="#">Kontakt</a>
+  </nav>
+  <main>
+    <section class="video-grid">
+      <div class="video-card">
+        <img class="video-thumb" src="https://via.placeholder.com/280x160.png?text=Video+1" alt="Video 1" />
+        <div class="video-title">Zábavné video 1</div>
+      </div>
+      <div class="video-card">
+        <img class="video-thumb" src="https://via.placeholder.com/280x160.png?text=Video+2" alt="Video 2" />
+        <div class="video-title">Zábavné video 2</div>
+      </div>
+      <div class="video-card">
+        <img class="video-thumb" src="https://via.placeholder.com/280x160.png?text=Video+3" alt="Video 3" />
+        <div class="video-title">Zábavné video 3</div>
+      </div>
+      <div class="video-card">
+        <img class="video-thumb" src="https://via.placeholder.com/280x160.png?text=Video+4" alt="Video 4" />
+        <div class="video-title">Zábavné video 4</div>
+      </div>
+    </section>
+
+    <section class="video-player">
+      <h2>Video: Pařící se pandy</h2>
+      <iframe src="https://www.youtube.com/embed/QwxirGFoMLc" allowfullscreen></iframe>
+    </section>
+  </main>
+  <footer>
+    © 2025 Hrací web pro dospělé. Všechna práva vyhrazena.
+  </footer>
+</body>
+</html>
